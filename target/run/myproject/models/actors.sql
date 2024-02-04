@@ -1,13 +1,8 @@
 
-  
+  create view "dvdrental"."public"."actors__dbt_tmp"
     
-
-  create  table "dvdrental"."public"."my_first_dbt_model__dbt_tmp"
-  
-  
-    as
-  
-  (
+    
+  as (
     /*
     Welcome to your first dbt model!
     Did you know that you can also configure models directly within SQL files?
@@ -18,16 +13,14 @@
 
 
 
-with source_data as (
+with source_actors as (
 
-    select 1 as id
-    union all
-    select null as id
+    select * from "dvdrental"."public"."actor"
 
 )
 
 select *
-from source_data
+from source_actors
 
 /*
     Uncomment the line below to remove records with null `id` values
@@ -35,4 +28,3 @@ from source_data
 
 -- where id is not null
   );
-  

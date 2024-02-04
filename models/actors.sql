@@ -1,3 +1,4 @@
+
 /*
     Welcome to your first dbt model!
     Did you know that you can also configure models directly within SQL files?
@@ -6,18 +7,16 @@
     Try changing "table" to "view" below
 */
 
+{{ config(materialized='view') }}
 
+with source_actors as (
 
-with source_data as (
-
-    select 1 as id
-    union all
-    select null as id
+    select * from "dvdrental"."public"."actor"
 
 )
 
 select *
-from source_data
+from source_actors
 
 /*
     Uncomment the line below to remove records with null `id` values

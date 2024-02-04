@@ -7,14 +7,11 @@ select
     
     
 
-select
-    id as unique_field,
-    count(*) as n_records
 
-from "dvdrental"."public"."my_first_dbt_model"
-where id is not null
-group by id
-having count(*) > 1
+
+select actor_id
+from "dvdrental"."public"."actors"
+where actor_id is null
 
 
 
